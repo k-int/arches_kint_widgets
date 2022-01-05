@@ -2,11 +2,7 @@ define([
   "knockout",
   "underscore",
   "viewmodels/widget",
-  "arches",
-  "uuid",
-  "jquery",
-  "utils/get-query-string-parameter",
-], function (ko, _, WidgetViewModel, arches, uuid, $, getQueryStringParameter) {
+], function (ko, _, WidgetViewModel) {
   /**
    * registers a sketchfab-widget component for use in forms
    * @function external:"ko.components".sketchfab-widget
