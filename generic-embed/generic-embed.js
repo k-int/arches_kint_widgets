@@ -43,6 +43,6 @@ define(["knockout", "underscore", "viewmodels/widget"], function (
         that.embedUrl = elm.outerHTML; //using outerHTML to get the element as string insted of HTMLObject
       }
     },
-    template: { require: "text!widget-templates/sketchfab-widget" },
+    template: { require: "text!widget-templates/generic-embed" },
   });
 });
