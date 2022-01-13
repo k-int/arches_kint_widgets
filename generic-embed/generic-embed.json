@@ -1,0 +1,7 @@
+{
+    "name": "generic-embed",
+    "component": "views/components/widgets/generic-embed",
+    "defaultconfig":null,
+    "helptext": "Copy and paste an embed link",
+    "datatype": "string"
+}
