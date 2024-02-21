@@ -1,0 +1,7 @@
+{
+    "name": "htmlembed-widget",
+    "component": "views/components/widgets/htmlembed-widget",
+    "defaultconfig":{"htmlEmbed":""},
+    "helptext": null,
+    "datatype": "html-datatype"
+}
