@@ -1,15 +1,27 @@
 {% extends "views/components/widgets/base.htm" %}
 {% load i18n %}
+
 {% block form %}
 <div class="row widget-wrapper">
     <div class="form-group">
         <div class="col-xs-12">
-            <input type="text" data-bind="textInput: value"
-                class="form-control input-lg widget-input">
+            <input type="text" data-bind="textInput: value, attr: { placeholder: sketchfab_placeholder, disabled: disabled }" 
+                class="form-control input-lg widget-input" style="margin-bottom: 5px">
         </div>
     </div>
 </div>
 {% endblock form %}
+
+{% block config_form %}
+<div class="control-label">
+    {% trans "Placeholder" %}
+</div>
+<div class="col-xs-12 crud-widget-container">
+    <input type="" placeholder="{% trans "Placeholder" %}" id="" class="form-control input-md widget-input" data-bind="textInput: sketchfab_placeholder">
+</div>
+{% endblock config_form %}
+
+
 {% block report %}
 {% load i18n %} {% load static %}
 

@@ -15,15 +15,22 @@ define([
   //order of operations between ko, jquery and html
   return ko.components.register("sketchfab-widget", {
     viewModel: function (params) {
+      params.configKeys = ['sketchfab_placeholder'];
       WidgetViewModel.apply(this, [params]);
 
       var that = this;
+
       //Take url from html input
       that.sketchfabUrl = that.value();
+
       //https://sketchfab.com/models/xxxxx --> https://sketchfab.com/models/xxxxxx/embed
 
-      if (that.sketchfabUrl.includes("https://sketchfab")) {
-        that.embedUrl = that.sketchfabUrl + "/embed";
+      if (that.sketchfabUrl !== null) {
+        if (that.sketchfabUrl.includes("https://sketchfab")) {
+          that.embedUrl = that.sketchfabUrl + "/embed";
+        } else {
+          that.embedUrl = null
+        }  
       } else {
         that.embedUrl = null
       }

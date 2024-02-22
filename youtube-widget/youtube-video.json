@@ -2,7 +2,7 @@
     "name": "youtube-video",
     "component": "views/components/widgets/youtube-video",
     "defaultconfig":{
-        "placeholder": "Enter YouTube URL"
+        "youtube_placeholder": "Enter YouTube URL"
       },
     "helptext": "Click share on the desired YouTube video and copy and paste the link, or copy the video URL.",
     "datatype": "string"

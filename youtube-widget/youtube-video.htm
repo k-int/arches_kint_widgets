@@ -5,12 +5,21 @@
 <div class="row widget-wrapper">
     <div class="form-group">
         <div class="col-xs-12">
-            <input type="text" data-bind="textInput: value, attr: { disabled: disabled }" placeholder="Enter Youtube URL"
-                class="form-control input-lg widget-input">
+            <input type="text" data-bind="textInput: value, attr: { placeholder: youtube_placeholder, disabled: disabled }"
+                class="form-control input-lg widget-input" style="margin-bottom: 5px">
         </div>
     </div>
 </div>
 {% endblock form %}
+
+{% block config_form %}
+<div class="control-label">
+    {% trans "Placeholder" %}
+</div>
+<div class="col-xs-12 crud-widget-container">
+    <input type="" placeholder="{% trans "Placeholder" %}" id="" class="form-control input-md widget-input" data-bind="textInput: youtube_placeholder">
+</div>
+{% endblock config_form %}
 
 {% block report %}
 <dt data-bind="text: label"></dt>

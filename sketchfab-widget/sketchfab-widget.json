@@ -2,7 +2,7 @@
     "name": "sketchfab-widget",
     "component": "views/components/widgets/sketchfab-widget",
     "defaultconfig":{
-        "placeholder": "Enter Sketchfab URL"
+        "sketchfab_placeholder": "Enter Sketchfab URL"
       },
     "helptext": "Copy and paste Sketchpad link from the top of your browser",
     "datatype": "string"

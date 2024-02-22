@@ -15,7 +15,9 @@ define(["knockout", "underscore", "viewmodels/widget"], function (
 
   return ko.components.register("youtube-video", {
     viewModel: function (params) {
+      params.configKeys = ['youtube_placeholder'];
       WidgetViewModel.apply(this, [params]);
+      
       var that = this;
 
       //Bind YoutubeUrl to entered short url
@@ -37,6 +39,7 @@ define(["knockout", "underscore", "viewmodels/widget"], function (
         } else {
           that.YoutubeUrl = null
         }
+
       }
     },
     template: {
