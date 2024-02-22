@@ -33,6 +33,9 @@ define(["knockout", "underscore", "viewmodels/widget"], function (
         const extractedID = that.YoutubeUrl.match(regexpUrlMatch)[0]
 
         that.YoutubeUrl = startUrl + extractedID;     // Combine embed link with video ID
+
+        // NOTE: Some youtube videos are unable to be embeded for some reason, despite the url being correct: 
+        // https://stackoverflow.com/questions/71970621/how-to-identify-the-youtube-videos-that-cant-embed-on-file
       }
     },
     template: {
