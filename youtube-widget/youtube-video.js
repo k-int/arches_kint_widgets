@@ -17,7 +17,7 @@ define(["knockout", "underscore", "viewmodels/widget"], function (
     viewModel: function (params) {
       WidgetViewModel.apply(this, [params]);
       var that = this;
-      
+
       //Bind YoutubeUrl to entered short url
       that.YoutubeUrl = that.value();
 
@@ -30,12 +30,13 @@ define(["knockout", "underscore", "viewmodels/widget"], function (
         // regex to match most variations of youtube URLs
         // https://gist.github.com/rodrigoborgesdeoliveira/987683cfbfcc8d800192da1e73adc486?permalink_comment_id=4342805#gistcomment-4342805
         const regexpUrlMatch = /(?<=[=\/&])[a-zA-Z0-9_\-]{11}(?=[=\/&?#\n\r]|$)/
-        const extractedID = that.YoutubeUrl.match(regexpUrlMatch)[0]
 
-        that.YoutubeUrl = startUrl + extractedID;     // Combine embed link with video ID
-
-        // NOTE: Some youtube videos are unable to be embeded for some reason, despite the url being correct: 
-        // https://stackoverflow.com/questions/71970621/how-to-identify-the-youtube-videos-that-cant-embed-on-file
+        if (that.YoutubeUrl.match(regexpUrlMatch)) {
+          const extractedID = that.YoutubeUrl.match(regexpUrlMatch)[0]
+          that.YoutubeUrl = startUrl + extractedID;     // Combine embed link with video ID
+        } else {
+          that.YoutubeUrl = null
+        }
       }
     },
     template: {
