@@ -21,7 +21,13 @@ define([
       //Take url from html input
       that.sketchfabUrl = that.value();
       //https://sketchfab.com/models/xxxxx --> https://sketchfab.com/models/xxxxxx/embed
-      that.embedUrl = that.sketchfabUrl + "/embed";
+
+      if (that.sketchfabUrl.includes("https://sketchfab")) {
+        that.embedUrl = that.sketchfabUrl + "/embed";
+      } else {
+        that.embedUrl = null
+      }
+      
     },
     template: { require: "text!widget-templates/sketchfab-widget" },
   });
