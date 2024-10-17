@@ -2,7 +2,9 @@ define([
   "knockout",
   "underscore",
   "viewmodels/widget",
-], function (ko, _, WidgetViewModel) {
+  "arches", 
+  "templates/views/components/widgets/sketchfab-widget.htm"
+], function (ko, _, WidgetViewModel, arches, sketchfabWidgetTemplate) {
   /**
    * registers a sketchfab-widget component for use in forms
    * @function external:"ko.components".sketchfab-widget
@@ -13,8 +15,8 @@ define([
    * @param {string} params.config().placeholder - default text to show in the text input
    */
   //order of operations between ko, jquery and html
-  return ko.components.register("sketchfab-widget", {
-    viewModel: function (params) {
+
+    const viewModel = function (params) {
       WidgetViewModel.apply(this, [params]);
 
       var that = this;
@@ -22,7 +24,10 @@ define([
       that.sketchfabUrl = that.value();
       //https://sketchfab.com/models/xxxxx --> https://sketchfab.com/models/xxxxxx/embed
       that.embedUrl = that.sketchfabUrl + "/embed";
-    },
-    template: { require: "text!widget-templates/sketchfab-widget" },
+    }
+
+    return ko.components.register("sketchfab-widget", {
+      viewModel: viewModel,
+      template: sketchfabWidgetTemplate,
   });
 });

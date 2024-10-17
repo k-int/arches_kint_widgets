@@ -3,5 +3,5 @@
     "component": "views/components/widgets/youtube-video",
     "defaultconfig":null,
     "helptext": "Click share on the desired Youtube video and copy and paste the link ",
-    "datatype": "string"
+    "datatype": "non-localized-string"
 }
